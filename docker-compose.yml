@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${DEPLOY_PORT:-8089}:80"
+    volumes:
+      - ./dist:/app/dist
