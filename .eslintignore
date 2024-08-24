@@ -5,3 +5,4 @@ dangerfile.ts
 setupTests.ts
 .vscode
 *.json
+tailwind.config.js

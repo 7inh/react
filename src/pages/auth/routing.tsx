@@ -1,5 +1,5 @@
-import SignInPage from "@pages/auth/SignInPage";
-import { Outlet, RouteObject } from "react-router-dom";
+import SignInPage from "@pages/auth/SignInPage"
+import { Outlet, RouteObject } from "react-router-dom"
 
 const authRoute: RouteObject = {
   path: "auth",
@@ -10,6 +10,6 @@ const authRoute: RouteObject = {
       element: <SignInPage />,
     },
   ],
-};
+}
 
-export default authRoute;
+export default authRoute

@@ -1,6 +1,6 @@
-import { createBrowserRouter } from "react-router-dom";
-import ErrorBoundaryWrapper from "@components/Wrappers/ErrorBoundaryWrapper";
-import authRoute from "@pages/auth/routing";
+import { createBrowserRouter } from "react-router-dom"
+import ErrorBoundaryWrapper from "@components/Wrappers/ErrorBoundaryWrapper"
+import authRoute from "@pages/auth/routing"
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
-export default router;
+export default router

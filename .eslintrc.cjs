@@ -12,11 +12,13 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "react/react-in-jsx-scope": "off",
-    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
     "prettier/prettier": "error",
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
-    semi: ["error", "always"],
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "react-hooks/exhaustive-deps": "error",
@@ -31,4 +33,4 @@ module.exports = {
     "react-hooks/rules-of-hooks": "warn",
     "@next/next/no-img-element": "off",
   },
-};
+}

@@ -36,6 +36,8 @@
       "@redux/*": ["redux/*"],
       "@features/*": ["features/*"],
       "@config/*": ["config/*"],
+      "@lib/*": ["lib/*"],
+      "@/*": ["../@components"]
     }
   },
   "include": ["src"]

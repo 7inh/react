@@ -1,6 +1,6 @@
 {
     "endOfLine": "lf",
-    "semi": true,
+    "semi": false,
     "useTabs": false,
     "arrowParens": "avoid",
     "tabWidth": 2,

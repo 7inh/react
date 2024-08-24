@@ -1,24 +1,28 @@
-import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { selectUserError, selectUserProfile, selectUserStatus } from "@redux/slices/userSlice";
-import { getUserProfile } from "@redux/thunks/userThunks";
-import React from "react";
+import { useAppDispatch, useAppSelector } from "@redux/hooks"
+import {
+  selectUserError,
+  selectUserProfile,
+  selectUserStatus,
+} from "@redux/slices/userSlice"
+import { getUserProfile } from "@redux/thunks/userThunks"
+import React from "react"
 
 const UserProfile: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const userProfile = useAppSelector(selectUserProfile);
-  const userStatus = useAppSelector(selectUserStatus);
-  const userError = useAppSelector(selectUserError);
+  const dispatch = useAppDispatch()
+  const userProfile = useAppSelector(selectUserProfile)
+  const userStatus = useAppSelector(selectUserStatus)
+  const userError = useAppSelector(selectUserError)
 
   const clickToFetchUserProfile = () => {
-    dispatch(getUserProfile());
-  };
+    dispatch(getUserProfile())
+  }
 
   if (userStatus === "loading") {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (userStatus === "failed") {
-    return <div>Error: {userError}</div>;
+    return <div>Error: {userError}</div>
   }
 
   return (
@@ -35,7 +39,7 @@ const UserProfile: React.FC = () => {
         <div>No user profile available</div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default UserProfile;
+export default UserProfile
