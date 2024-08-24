@@ -34,7 +34,8 @@
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@redux/*": ["redux/*"],
-      "@features/*": ["features/*"]
+      "@features/*": ["features/*"],
+      "@config/*": ["config/*"],
     }
   },
   "include": ["src"]
