@@ -37,6 +37,7 @@
       "@features/*": ["features/*"],
       "@config/*": ["config/*"],
       "@lib/*": ["lib/*"],
+      "@assets/*": ["assets/*"],
       "@/*": ["../@components"]
     }
   },

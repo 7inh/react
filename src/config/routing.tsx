@@ -1,16 +1,20 @@
 import { createBrowserRouter } from "react-router-dom"
 import ErrorBoundaryWrapper from "@components/wrappers/ErrorBoundaryWrapper"
 import authRoute from "@pages/auth/routing"
+import PageNotFound from "@features/PageNotFound"
 
 const router = createBrowserRouter([
   {
     element: <ErrorBoundaryWrapper />,
-    path: "/",
     children: [
+      {
+        path: "/",
+        element: <div>Home</div>,
+      },
       authRoute,
       {
         path: "*",
-        element: <div>404</div>,
+        element: <PageNotFound />,
       },
     ],
   },

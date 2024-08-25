@@ -20,6 +20,7 @@ export default defineConfig({
       "@features": path.resolve(__dirname, "src/features"),
       "@config": path.resolve(__dirname, "src/config"),
       "@lib": path.resolve(__dirname, "src/lib"),
+      "@assets": path.resolve(__dirname, "src/assets"),
     },
   },
 })
