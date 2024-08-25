@@ -20,16 +20,24 @@ const ErrorBoundary = ({
   }
 
   return (
-    <div>
-      <pre>
-        <div>
-          <h1>Something went wrong</h1>
-          <p>
-            Please try refreshing the page. If the issue persists, please
-            contact support.
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <div className="max-w-xl w-full bg-white shadow-md rounded-lg p-6">
+        <h1 className="text-2xl font-bold text-red-600 mb-4">
+          Something went wrong.
+        </h1>
+        <p className="text-gray-700 mb-2">
+          We're sorry, but something went wrong. Please try again later.
+        </p>
+        <details className="bg-gray-100 p-4 rounded-lg text-sm">
+          <summary className="cursor-pointer text-blue-600">
+            More details
+          </summary>
+          <p className="text-red-500 mt-2">{error && error.toString()}</p>
+          <p className="text-gray-600 overflow-auto">
+            {errorInfo && errorInfo.componentStack}
           </p>
-        </div>
-      </pre>
+        </details>
+      </div>
     </div>
   )
 }

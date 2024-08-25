@@ -7,6 +7,7 @@ export interface Error404Props {
 
 const Error404 = (props: Error404Props) => {
   const { onGoBack, onTakeMeHome } = props
+  throw new Error("Not implemented")
   return (
     <section className="bg-white dark:bg-gray-900 ">
       <div className="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
