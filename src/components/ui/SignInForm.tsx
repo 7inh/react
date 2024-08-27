@@ -1,9 +1,10 @@
 import OutLineContainer from "@components/containers/OutLineContainer"
 import { Button } from "@components/ui/Button"
 import { Checkbox } from "@components/ui/Checkbox"
-import { Input } from "@components/ui/Input"
+import InputHF from "@components/ui/InputHF"
 import { Label } from "@components/ui/Label"
 import Link from "@components/ui/Link"
+import HookFormWrapper from "@components/wrappers/HookFormWrapper"
 import { cn } from "@lib/utils"
 
 export interface SignInFormProps
@@ -11,12 +12,12 @@ export interface SignInFormProps
 
 const SignInForm = ({ className, ...props }: SignInFormProps) => {
   return (
-    <form
-      {...props}
+    <HookFormWrapper
       className={cn(
         "space-y-3.5 border p-6 rounded-lg shadow-sm bg-white",
         className
       )}
+      {...props}
     >
       <h2 className="text-3xl font-bold">Sign In</h2>
       <div className="grid grid-cols-2 gap-2.5 py-2">
@@ -64,28 +65,10 @@ const SignInForm = ({ className, ...props }: SignInFormProps) => {
         <p className="text-center text-gray-500">or</p>
         <hr className="border-gray-200 flex-grow" />
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="example@email.com"
-          required
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
-        <Input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="123456"
-          required
-        />
-      </div>
+      <InputHF label="Email" name="email" type="email" />
+      <InputHF label="Password" name="password" type="password" />
       <div className="flex items-center space-x-2 py-1">
-        <Checkbox id="remember" disabled />
+        <Checkbox id="remember" />
         <Label htmlFor="remember">Remember me</Label>
         <div className="flex-grow" />
         <Link
@@ -104,7 +87,7 @@ const SignInForm = ({ className, ...props }: SignInFormProps) => {
           Sign Up
         </Link>
       </p>
-    </form>
+    </HookFormWrapper>
   )
 }
 
