@@ -1,16 +1,16 @@
-import React, { PropsWithChildren } from "react"
+import { ComponentType, FunctionComponent, PropsWithChildren } from "react"
 import { Provider as ReduxProvider } from "react-redux"
 import store from "@redux/store.ts"
 
 interface IProvider<TProps> {
-  Component: React.ComponentType<React.PropsWithChildren<TProps>>
+  Component: ComponentType<PropsWithChildren<TProps>>
   props?: Omit<TProps, "children">
 }
 
 function composeProviders<TProviders extends Array<IProvider<any>>>(
   providers: TProviders
-): React.ComponentType<React.PropsWithChildren> {
-  const ProviderComponent: React.FunctionComponent<React.PropsWithChildren> = ({
+): ComponentType<PropsWithChildren> {
+  const ProviderComponent: FunctionComponent<PropsWithChildren> = ({
     children,
   }) => {
     const initialJSX = <>{children}</>
@@ -27,7 +27,7 @@ function composeProviders<TProviders extends Array<IProvider<any>>>(
 }
 
 function createProvider<TProps>(
-  Component: React.ComponentType<React.PropsWithChildren<TProps>>,
+  Component: ComponentType<PropsWithChildren<TProps>>,
   props?: Omit<TProps, "children">
 ): IProvider<TProps> {
   return { Component, props }

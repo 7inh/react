@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export class ErrorHandler {
   static handle(error: any): void {
     if (error.response) {

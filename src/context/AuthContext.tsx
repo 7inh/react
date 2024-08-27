@@ -1,5 +1,5 @@
 import { getToken, removeToken, setToken } from "@utils/auth"
-import { createContext, PropsWithChildren, useState } from "react"
+import { createContext, PropsWithChildren, useContext, useState } from "react"
 
 export interface AuthContextType {
   isAuthenticated: boolean
@@ -8,6 +8,8 @@ export interface AuthContextType {
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined)
+
+export const useAuth = () => useContext(AuthContext)
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(!!getToken())
