@@ -1,9 +1,10 @@
+import RootLayout from "@components/layouts/RootLayout"
 import SignInPage from "@pages/auth/SignInPage"
-import { Outlet, RouteObject } from "react-router-dom"
+import { RouteObject } from "react-router-dom"
 
 const authRoute: RouteObject = {
   path: "auth",
-  element: <Outlet />,
+  element: <RootLayout />,
   children: [
     {
       path: "sign-in",

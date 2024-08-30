@@ -12,13 +12,14 @@ import { cn } from "@lib/utils"
 export interface SignInFormProps
   extends React.HTMLAttributes<HTMLFormElement> {}
 
-const SignInForm = ({ className, ...props }: SignInFormProps) => {
+const SignInForm = ({ className, onSubmit, ...props }: SignInFormProps) => {
   return (
     <HookFormWrapper
       className={cn(
         "space-y-3.5 border p-6 rounded-lg shadow-sm bg-white",
         className
       )}
+      onSubmitCustom={onSubmit}
       {...props}
     >
       <h2 className="text-3xl font-bold">Sign In</h2>

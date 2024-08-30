@@ -1,9 +1,9 @@
-import SignInForm from "@components/ui/SignInForm"
+import SignIn from "@features/SignIn"
 
 const SignInPage = () => {
   return (
     <div className="bg-zinc-100 h-dvh grid place-items-center">
-      <SignInForm className="w-full max-w-md" />
+      <SignIn />
     </div>
   )
 }
