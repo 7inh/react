@@ -42,7 +42,16 @@ const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
     VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+>(({ id, className, variant, ...props }, ref) => {
+  React.useEffect(() => {
+    const toastCountDown = document.querySelector(
+      `.toast-id-${id} .toast__count-down`
+    )
+    setTimeout(() => {
+      toastCountDown?.remove()
+    }, 4950)
+  }, [id])
+
   return (
     <ToastPrimitives.Root
       ref={ref}

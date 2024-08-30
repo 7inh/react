@@ -67,3 +67,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .line-count-down {
+    animation: line-count-down 5s linear;
+  }
+
+  @keyframes line-count-down {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+}

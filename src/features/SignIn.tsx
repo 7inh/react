@@ -6,7 +6,8 @@ const SignIn = () => {
   const onSubmit = () => {
     toast({
       title: "Scheduled: Catch up",
-      description: "Friday, February 10, 2023 at 5:57 PM",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero at luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
     })
   }
 
