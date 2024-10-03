@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import ErrorBoundaryWrapper from "@components/wrappers/ErrorBoundaryWrapper"
 import authRoute from "@pages/auth/routing"
 import PageNotFound from "@features/PageNotFound"
+import ToolPage from "@pages/ToolPage"
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home</div>,
+        element: <ToolPage />,
       },
       authRoute,
       {

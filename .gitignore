@@ -34,3 +34,4 @@ dist-ssr
 .yarnrc.yml
 !.yarn/releases
 yarn.lock
+.env

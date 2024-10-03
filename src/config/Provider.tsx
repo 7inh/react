@@ -1,6 +1,7 @@
+import store from "@redux/store.ts"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ComponentType, FunctionComponent, PropsWithChildren } from "react"
 import { Provider as ReduxProvider } from "react-redux"
-import store from "@redux/store.ts"
 
 interface IProvider<TProps> {
   Component: ComponentType<PropsWithChildren<TProps>>
@@ -33,7 +34,12 @@ function createProvider<TProps>(
   return { Component, props }
 }
 
-const providers = [createProvider(ReduxProvider, { store })]
+const queryClient = new QueryClient()
+
+const providers = [
+  createProvider(ReduxProvider, { store }),
+  createProvider(QueryClientProvider, { client: queryClient }),
+]
 
 const Provider = ({ children }: PropsWithChildren) => {
   const ProviderComponent = composeProviders(providers)
